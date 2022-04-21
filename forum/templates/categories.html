@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Categories
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td onclick="window.location='category/{{category.id}}'">
+                    {{category}}
+                    <a href="#" class="badge badge-primary">Primary</a>
+                </td>
+            </tr>
+        {%endfor%}
+        </tbody>   
+    </table>
+{% endblock %}

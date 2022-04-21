@@ -1,0 +1,26 @@
+<div class="topic-backdrop">
+    <div class="topic shadow">
+        <div class="topic_author-image">
+            <img src="/static/img/Nichijou-PNG-Transparent-Image.png" alt="">
+        </div>
+
+        <div class="topic-content">
+            <div class="topic-votes">
+                <div class="topic-actions">
+                    <button onclick="updownvote_topic('{{ topic.id }}', 'up')" class="upvote"><i class="fa-solid fa-angle-up"></i></button>
+                    <button onclick="updownvote_topic('{{ topic.id }}', 'down')" class="downvote"><i class="fa-solid fa-angle-down"></i></button>
+                </div>
+                <span class="divider"></span>
+                <div id="topic_votes_{{ topic.id }}" class="topic-votes_value">{{ topic.get_votes }}</div>
+            </div>
+            <div class="topic-text">
+                <blockquote >{{ topic.name }}
+                    <cite>{{ topic.author.username }}</cite>
+                </blockquote>
+                <p>{{ topic.text|slice:"0:100" }}...</p>
+                <div class="topic_category-image"><img src='{{ topic.category.category_icon }}' alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+

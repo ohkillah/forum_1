@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <div class="card" style="margin: 2em">
+      <div class="card-header">
+        Login to our forum. Or <a href="/register">register</a> if you are still not with us.
+      </div>
+      <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+              <div class="mb-3">
+                <label for="login_form" class="form-label">Login</label>
+                <input type="email" class="form-control" value="{{ email }}" id="login_form" name="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="password_form" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password_form">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember password</label>
+              </div>
+              <div class="mb-3 form-check">
+                  <p style="color:red">{{ message }}</p>
+              </div>
+              <a href="/forgot_password">Forgot password</a><br><br>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+    </div>
+{% endblock %}
+

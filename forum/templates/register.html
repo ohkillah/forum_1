@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="card" style="margin: 2em">
+      <div class="card-header">
+        You are about to become a member of our forum. Already are? Click here to login: <a href="/login">login</a>.
+      </div>
+      <div class="card-body">
+          <form method="post">
+              <div class="mb-3">
+                <label for="first_name_form" class="form-label">First Name</label>
+                <input required type="text" class="form-control" value="{{ first_name }}" id="first_name_form" name="first_name" >
+              </div>
+              <div class="mb-3">
+                <label for="last_name_form" class="form-label">Second Name</label>
+                <input required type="text" class="form-control" value="{{ last_name }}" id="last_name_form" name="last_name">
+              </div>
+              <div class="mb-3">
+                <label for="login_form" class="form-label">Email</label>
+                <input required type="email" class="form-control" value="{{ email }}" id="login_form" name="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="username_form" class="form-label">Username</label>
+                <input required type="text" class="form-control" value="{{ username }}" id="username_form" name="username">
+              </div>
+              <div class="mb-3">
+                <label for="password1_form" class="form-label">Password</label>
+                <input required type="password" class="form-control" name="password1" id="password1_form">
+              </div>
+              <div class="mb-3">
+                <label for="password2_form" class="form-label">Repeat Password</label>
+                <input required type="password" class="form-control" name="password2" id="password2_form">
+              </div>
+              <div class="mb-3 form-check">
+                  <p style="color:red">{{ message }}</p>
+              </div>
+              <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+      </div>
+    </div>
+{% endblock %}
